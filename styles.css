@@ -200,7 +200,7 @@ input[type="radio"] {
  
   }
   .question-container {
-      max-width: 100%; /* Ocupará toda a largura do celular */
+      max-width: 200%; /* Ocupará toda a largura do celular */
       margin: 0 auto; /* Centraliza o contêiner */
       padding: 15px; /* Espaçamento interno */
   }
