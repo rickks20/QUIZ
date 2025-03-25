@@ -187,8 +187,8 @@ input[type="radio"] {
       padding-right: 70px;
   }
   .image-java {
-      max-width: 100%; /* Garante que a largura da imagem não ultrapasse o contêiner */
-      height: auto; /* Mantém a proporção original da imagem */
+      max-width: 80%; /* Garante que a largura da imagem não ultrapasse o contêiner */
+      height: 30px; /* Mantém a proporção original da imagem */
       display: block; /* Faz a imagem ocupar uma nova linha */
       margin: 0 auto; /* Centraliza a imagem horizontalmente */
     }
