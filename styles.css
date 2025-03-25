@@ -176,7 +176,7 @@ input[type="radio"] {
   }
 
   section > .question {  /* Supondo que você tenha uma classe 'question' */
-      margin: 10px 0;  /* Espaço entre os elementos */
+      margin: 20px ;  /* Espaço entre os elementos */
       padding: 1%;
 
   }
