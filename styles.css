@@ -1,128 +1,188 @@
 body {
-    
-    color: black;
-    display: inline-block;
+  margin: 0;
+  padding: 0;
+  color: black;
+  display: inline-block;
+  padding-top: 30px;     /* Afasta o texto do topo da tela */
+  padding-right: 30px;   /* Afasta o texto da borda direita */
+  padding-bottom: 20px;  /* Afasta o texto da parte inferior */
+  padding-left: 30px;
 }
 .question-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #0079a9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+  background-color: #0079a9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
 }
+.hotbar {
+  position: fixed;  /* Faz com que a hotbar fique fixa */
+  top: 0;           /* Fixa no topo da tela */
+  left: 0;          /* Fixa à esquerda */
+  width: 100%;      /* Ocupa a largura total da tela */
+  background-color: #c4c4c4; /* Cor de fundo */
+  color: white;     /* Cor do texto */
+  display: flex;    /* Organiza os botões em linha */
+  justify-content: flex-end;  /* Alinha os itens à direita */
+  padding: 5px;    /* Espaçamento interno */
+  z-index: 1000;    /* Garante que a hotbar fique acima de outros elementos */
+  
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .question {
-    margin-bottom: 10px;
-    padding: 10px;
-    border-bottom: 1px solid #ffffff;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ffffff;
 }
-    
+  
 h2 {
-    font-weight: bold; /* Torna o texto mais grosso */
+  font-weight: bold; /* Torna o texto mais grosso */
 }
 
 .clickable {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 summary {
-    background-color: aquamarine;
-    display: inline-block;
-    padding: 10px;
-    border-radius: 7px;
+  background-color: aquamarine;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 7px;
 }
 
 #p2, #p3, #p4 {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    border: 2px solid #0079a9;
-    outline: none;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 2px solid #0079a9;
+  outline: none;
 } 
 
 #p2:focus, #p3:focus, #p4:focus {
-    border-color: #000000; /* Muda a cor da borda para vermelho quando focado */
-    background-color: hsl(212, 88%, 83%); /* Muda o fundo para um tom mais claro quando focado */
+  border-color: #000000; /* Muda a cor da borda para vermelho quando focado */
+  background-color: hsl(212, 88%, 83%); /* Muda o fundo para um tom mais claro quando focado */
+}
+
+input[type="checkbox"] {
+  display: none; /* Esconde o checkbox padrão */
+}
+
+
+label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #0079a9;
+  border-radius: 20px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+ /* Quando o checkbox é selecionado (marcado), muda o fundo */
+ input[type="checkbox"]:checked + label::before {
+  background-color: #0a06ff;
+  border-color: #000000;
+}
+
+ /* Mudando a cor do texto quando o checkbox é selecionado */
+ input[type="checkbox"]:checked + label {
+  color: #1103d3;
+}
+
+input[type="radio"] {
+  display: none; /* Esconde o checkbox padrão */
+}
+
+ /* Quando o checkbox é selecionado (marcado), muda o fundo */
+ input[type="radio"]:checked + label::before {
+  background-color: #0a06ff;
+  border-color: #000000;
+}
+
+ /* Mudando a cor do texto quando o checkbox é selecionado */
+ input[type="radio"]:checked + label {
+  color: #1103d3;
+}
+.login-btn {
+  
+  right: 0;         /* Alinha o botão à direita da tela */
+  
+ /* Coloca o botão à direita */
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0079a9; /* Cor de fundo */
+  color: white; /* Cor do texto */
+  text-decoration: none; /* Remove o sublinhado do link */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 16px;
+
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #005f7f; /* Muda a cor do botão quando o usuário passa o mouse */
+}
+/* Tornar a section um contêiner flexível */
+
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  section {
+      flex-direction: column; /* Altera para coluna em telas menores */
+      padding: 10%;
   }
 
-  input[type="checkbox"] {
-    display: none; /* Esconde o checkbox padrão */
+  section > .question {  /* Supondo que você tenha uma classe 'question' */
+      margin: 10px 0;  /* Espaço entre os elementos */
+      padding: 1%;
+  }
+
+  header {
+      
+      padding: 20px;
+      padding-right: 70px;
+  }
+
+  .image-java {
+      width: 40vw; /* Reduzi um pouco a largura para não ocupar muito espaço */
   }
  
-
-  label {
-    position: relative;
-    padding-left: 30px;
-    cursor: pointer;
-    font-size: 18px;
-    margin-bottom: 10px;
-    display: inline-block;
+  .question-container {
+      max-width: 350px;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #0079a9;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      align-items: center;
   }
 
-  label::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    border: 2px solid #0079a9;
-    border-radius: 20px;
-    background-color: #fff;
-    transition: all 0.3s ease;
-  }
-
-   /* Quando o checkbox é selecionado (marcado), muda o fundo */
-   input[type="checkbox"]:checked + label::before {
-    background-color: #0a06ff;
-    border-color: #000000;
-  }
-
-   /* Mudando a cor do texto quando o checkbox é selecionado */
-   input[type="checkbox"]:checked + label {
-    color: #1103d3;
-  }
-
-  input[type="radio"] {
-    display: none; /* Esconde o checkbox padrão */
-  }
-
-   /* Quando o checkbox é selecionado (marcado), muda o fundo */
-   input[type="radio"]:checked + label::before {
-    background-color: #0a06ff;
-    border-color: #000000;
-  }
-
-   /* Mudando a cor do texto quando o checkbox é selecionado */
-   input[type="radio"]:checked + label {
-    color: #1103d3;
-  }
-  @media screen and (max-width: 768px){
-    .container{
+  body {
+      margin: 0;
+      color: black;
       display: block;
-      background-image: none ;
-    }
-    .container__imagem{
-      width 50vw;
-    }
-      .container__caixa{
-        margin: 2em 2em;
-      }
-      .secundario{
-        margin: 0;
-        text-align: center;
-      }
-      .secundario__imagem{
-        width:50vw;
-      }
-      .dispositivos__lista{
-        display:block;
-      }
-      .rodape__lista{
-        display:block;
-      }
-    
-    }
+      
+      
+  }
+}
