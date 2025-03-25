@@ -1,0 +1,102 @@
+body {
+    
+    color: black;
+    display: inline-block;
+}
+.question-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0079a9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.question {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ffffff;
+}
+    
+h2 {
+    font-weight: bold; /* Torna o texto mais grosso */
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+summary {
+    background-color: aquamarine;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+#p2, #p3, #p4 {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 2px solid #0079a9;
+    outline: none;
+} 
+
+#p2:focus, #p3:focus, #p4:focus {
+    border-color: #000000; /* Muda a cor da borda para vermelho quando focado */
+    background-color: hsl(212, 88%, 83%); /* Muda o fundo para um tom mais claro quando focado */
+  }
+
+  input[type="checkbox"] {
+    display: none; /* Esconde o checkbox padrão */
+  }
+ 
+
+  label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+
+  label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #0079a9;
+    border-radius: 20px;
+    background-color: #fff;
+    transition: all 0.3s ease;
+  }
+
+   /* Quando o checkbox é selecionado (marcado), muda o fundo */
+   input[type="checkbox"]:checked + label::before {
+    background-color: #0a06ff;
+    border-color: #000000;
+  }
+
+   /* Mudando a cor do texto quando o checkbox é selecionado */
+   input[type="checkbox"]:checked + label {
+    color: #1103d3;
+  }
+
+  input[type="radio"] {
+    display: none; /* Esconde o checkbox padrão */
+  }
+
+   /* Quando o checkbox é selecionado (marcado), muda o fundo */
+   input[type="radio"]:checked + label::before {
+    background-color: #0a06ff;
+    border-color: #000000;
+  }
+
+   /* Mudando a cor do texto quando o checkbox é selecionado */
+   input[type="radio"]:checked + label {
+    color: #1103d3;
+  }
